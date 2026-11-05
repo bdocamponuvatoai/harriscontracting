@@ -1,0 +1,31 @@
+.portfolio {
+  padding-top: 10px;
+  min-height: 550px;
+}
+.portfolio .project-card .eyebrow {
+  margin: 20px 0 10px;
+  font-size: 9px;
+}
+.project-facts {
+  margin: 0 0 35px;
+}
+.project-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+.project-facts dt {
+  color: #5f6a78;
+}
+.project-facts dd {
+  margin: 0;
+  text-align: right;
+}
+@media (max-width: 800px) {
+  .portfolio {
+    padding-top: 0;
+  }
+}

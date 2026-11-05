@@ -1,0 +1,25 @@
+.split-copy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  padding-top: 65px;
+}
+.split-copy p {
+  margin-bottom: 28px;
+}
+.split-copy .button {
+  margin-top: 25px;
+}
+/* Takes the 25px gap the removed status note used to provide (matches .button above). */
+.split-copy .text-link {
+  margin-top: 25px;
+}
+@media (max-width: 800px) {
+  .split-copy {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .split-copy .lead {
+    font-size: 17px;
+  }
+}

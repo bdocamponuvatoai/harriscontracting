@@ -1,0 +1,32 @@
+.quote-section {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 8% 90px;
+}
+.quote-section blockquote {
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: -1.4px;
+  line-height: 1.4;
+  margin: 25px 0;
+}
+.quote-section > p:not(.eyebrow) {
+  font-size: 12px;
+}
+.quote-section > p > span {
+  color: var(--muted);
+}
+.quote-section .text-link {
+  margin-top: 25px;
+  font-size: 11px;
+}
+@media (max-width: 800px) {
+  .quote-section {
+    padding: 10px 6% 65px;
+  }
+  .quote-section blockquote {
+    font-size: 28px;
+    letter-spacing: -0.8px;
+  }
+}

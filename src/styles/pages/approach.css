@@ -1,0 +1,44 @@
+.process-long {
+  padding-top: 0;
+}
+.process-long article {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 35px;
+  border-top: 1px solid var(--line);
+  padding: 45px 0;
+}
+.process-long article > span {
+  font-size: 14px;
+  color: #8d5a2e;
+}
+.process-long h2 {
+  font-size: 40px;
+}
+.process-long p {
+  font-size: 16px;
+  max-width: 650px;
+  color: #5c6571;
+  margin: 20px 0;
+}
+.process-long small {
+  font-size: 11px;
+  color: #5c6571;
+}
+@media (max-width: 800px) {
+  /* Cascade fix: in the original single file the mobile .section padding won by source order. */
+  .process-long {
+    padding-top: 65px;
+  }
+  .process-long article {
+    grid-template-columns: 35px 1fr;
+    gap: 15px;
+    padding: 30px 0;
+  }
+  .process-long h2 {
+    font-size: 30px;
+  }
+  .process-long p {
+    font-size: 14px;
+  }
+}

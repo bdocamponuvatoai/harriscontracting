@@ -1,0 +1,10 @@
+:root {
+  --ink: #243449;
+  --muted: #5b6979;
+  --paper: #fbf9f5;
+  --line: #d6dde5;
+  --accent: #c5a27b;
+  --surface: #edf1f5;
+  --font-sans: var(--font-dm-sans), Arial, sans-serif;
+  --font-display: var(--font-manrope), Arial, sans-serif;
+}

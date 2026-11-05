@@ -1,0 +1,21 @@
+.prose {
+  max-width: 850px;
+  padding-top: 0;
+}
+.prose h2 {
+  font-size: 30px;
+}
+.prose p {
+  margin: 25px 0;
+  font-size: 15px;
+  color: #566372;
+}
+.prose .text-link {
+  margin-top: 20px;
+}
+@media (max-width: 800px) {
+  /* Cascade fix: in the original single file the mobile .section padding won by source order. */
+  .prose {
+    padding-top: 65px;
+  }
+}

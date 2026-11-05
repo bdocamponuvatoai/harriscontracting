@@ -1,0 +1,39 @@
+.finish-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+  background: #e4e9ee;
+  max-width: none;
+}
+.finish-section > div > p:not(.eyebrow) {
+  font-size: 14px;
+  color: #5c6571;
+  margin-top: 25px;
+  max-width: 440px;
+}
+.finish-panel h3 {
+  font-size: 32px;
+}
+.finish-panel p {
+  font-size: 15px;
+  color: #55606d;
+  margin: 25px 0 30px;
+}
+.finish-panel small {
+  display: block;
+  margin-top: 15px;
+  font-size: 10px;
+  color: #576473;
+}
+.finish-panel .text-link {
+  font-size: 12px;
+}
+@media (max-width: 800px) {
+  .finish-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .finish-section h2 {
+    font-size: 37px;
+  }
+}

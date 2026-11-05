@@ -1,0 +1,89 @@
+footer {
+  /* Bottom padding includes the 18px that the removed preview note used to add. */
+  padding: 70px 5% 40px;
+  background: #243449;
+  color: #d2d7dd;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 0.7fr 1.15fr;
+  gap: 35px;
+}
+.footer-brand img {
+  width: 210px;
+  height: 85px;
+  object-fit: contain;
+}
+.footer-brand p {
+  font-size: 13px;
+  margin-top: 20px;
+  color: #a4adb7;
+}
+.footer-main h3 {
+  font-family: inherit;
+  letter-spacing: 0;
+  font-size: 12px;
+  margin-bottom: 22px;
+  color: #f1f4f7;
+}
+.footer-main > div > a {
+  display: block;
+  font-size: 11px;
+  line-height: 2.4;
+  color: #b4bcc6;
+}
+.footer-main > div > a:hover {
+  color: #c5a27b;
+}
+.footer-main > div > p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #959ea9;
+  margin-top: 15px;
+}
+.footer-meta {
+  border-top: 1px solid #ffffff20;
+  margin-top: 55px;
+  padding-top: 25px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #a3acb6;
+}
+@media (max-width: 1100px) {
+  .footer-main {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 35px;
+  }
+  .footer-main > div:last-child {
+    grid-column: 2/4;
+  }
+}
+@media (max-width: 800px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 20px;
+  }
+  .footer-brand {
+    grid-column: 1/-1;
+  }
+  .footer-brand img {
+    width: 190px;
+    height: 75px;
+  }
+  .footer-main > div:last-child {
+    grid-column: 1/-1;
+  }
+  .footer-main > div > a {
+    font-size: 11px;
+  }
+  .footer-meta {
+    display: block;
+    line-height: 2.2;
+    margin-top: 35px;
+  }
+  .footer-meta > span {
+    display: block;
+  }
+}

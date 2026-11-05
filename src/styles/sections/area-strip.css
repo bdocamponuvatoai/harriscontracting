@@ -1,0 +1,21 @@
+.area-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  border-top: 1px solid var(--line);
+  align-items: center;
+}
+.area-strip p:not(.eyebrow) {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+@media (max-width: 800px) {
+  .area-strip {
+    display: block;
+  }
+  .area-strip > div + div {
+    margin-top: 30px;
+  }
+}

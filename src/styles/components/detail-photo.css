@@ -1,0 +1,26 @@
+.detail-photo {
+  margin: 0 4%;
+  position: relative;
+}
+.detail-photo > img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.detail-photo figcaption {
+  font-size: 10px;
+  color: #5b6571;
+  padding: 14px 0;
+}
+@media (max-width: 800px) {
+  .detail-photo {
+    margin: 0 5%;
+  }
+  .detail-photo > img {
+    height: 350px;
+  }
+  .detail-photo figcaption {
+    font-size: 9px;
+  }
+}

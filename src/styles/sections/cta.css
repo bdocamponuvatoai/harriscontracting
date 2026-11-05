@@ -1,0 +1,30 @@
+.cta {
+  text-align: center;
+  padding: 90px 6%;
+  background: #e4e8ed;
+}
+.cta h2 {
+  font-size: clamp(48px, 6.2vw, 88px);
+  line-height: 1.06;
+  margin-bottom: 35px;
+}
+.cta-phone {
+  display: block;
+  margin-top: 23px;
+  font-size: 12px;
+  color: #4f5863;
+}
+.cta .eyebrow {
+  font-size: 9px;
+}
+@media (max-width: 800px) {
+  .cta {
+    padding: 65px 6%;
+  }
+  .cta h2 {
+    font-size: 54px;
+  }
+  .cta .eyebrow {
+    font-size: 8px;
+  }
+}

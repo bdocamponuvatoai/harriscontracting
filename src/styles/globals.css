@@ -1,0 +1,42 @@
+/*
+ * Global stylesheet. Partials are imported in the order their rules first appeared in
+ * the original single-file stylesheet. THE ORDER MATTERS: rules of equal specificity
+ * resolve by source order, so moving an import can change the design.
+ */
+@import "./base/tokens.css";
+@import "./base/base.css";
+@import "./base/typography.css";
+@import "./base/layout.css";
+@import "./components/button.css";
+@import "./components/text-link.css";
+@import "./components/header.css";
+@import "./sections/hero.css";
+@import "./sections/credentials.css";
+@import "./sections/intro.css";
+@import "./components/section-heading.css";
+@import "./sections/service-explorer.css";
+@import "./components/project-card.css";
+@import "./sections/living-band.css";
+@import "./sections/approach.css";
+@import "./components/process.css";
+@import "./sections/founder.css";
+@import "./sections/quote.css";
+@import "./sections/area-strip.css";
+@import "./sections/cta.css";
+@import "./components/footer.css";
+@import "./components/page-intro.css";
+@import "./components/detail-photo.css";
+@import "./components/split-copy.css";
+@import "./components/check-list.css";
+@import "./sections/finish-selector.css";
+@import "./components/pills.css";
+@import "./pages/services.css";
+@import "./pages/projects.css";
+@import "./pages/approach.css";
+@import "./sections/faq.css";
+@import "./pages/about.css";
+@import "./pages/service-area.css";
+@import "./pages/start.css";
+@import "./components/forms.css";
+@import "./pages/privacy.css";
+@import "./sections/organizations.css";

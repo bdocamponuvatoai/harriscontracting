@@ -1,0 +1,24 @@
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+.pills button {
+  background: transparent;
+  border: 1px solid #b0b9c4;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 12px;
+}
+.pills button[aria-pressed="true"] {
+  background: #262f3b;
+  color: white;
+  border-color: #262f3b;
+}
+@media (max-width: 800px) {
+  .pills button {
+    padding: 11px 16px;
+    font-size: 11px;
+  }
+}

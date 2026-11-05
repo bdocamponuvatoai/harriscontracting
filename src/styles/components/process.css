@@ -1,0 +1,69 @@
+.process {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+  margin: 40px 0;
+}
+.process-nav button {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #c1c8d0;
+  background: transparent;
+  text-align: left;
+  padding: 25px 0;
+  font-size: 18px;
+}
+.process-nav button span {
+  font-size: 10px;
+  color: #5e6874;
+}
+.process-nav button b {
+  margin-left: auto;
+  font-weight: 400;
+}
+.process-nav button[aria-pressed="true"] {
+  color: #8d5a2e;
+}
+.process-content {
+  border-left: 1px solid #c1c8d0;
+  padding: 10px 0 20px 50px;
+}
+.phase-count {
+  font-size: 10px;
+  color: #646f7c;
+  display: block;
+  margin-bottom: 25px;
+}
+.process-content p {
+  font-size: 14px;
+  margin: 20px 0;
+  color: #515a66;
+  max-width: 430px;
+}
+.process-content small {
+  font-size: 10px;
+  color: #4e5660;
+  display: block;
+  max-width: 380px;
+}
+@media (max-width: 800px) {
+  .process {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 30px 0;
+  }
+  .process-nav button {
+    padding: 20px 0;
+    font-size: 16px;
+  }
+  .process-content {
+    border: 0;
+    padding: 5px 0 10px;
+  }
+  .process-content h3 {
+    font-size: 29px;
+  }
+}

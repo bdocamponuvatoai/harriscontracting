@@ -1,0 +1,38 @@
+.page-intro {
+  padding: 45px 6% 65px;
+  max-width: 1800px;
+  margin: auto;
+}
+.back-link {
+  display: inline-block;
+  font-size: 11px;
+  color: #606a76;
+  margin-bottom: 45px;
+}
+.page-intro h1 {
+  font-size: clamp(48px, 6.7vw, 96px);
+  max-width: 1100px;
+}
+.page-intro .lead {
+  max-width: 700px;
+  margin-top: 28px;
+}
+@media (max-width: 800px) {
+  .page-intro {
+    padding: 30px 6% 45px;
+  }
+  .back-link {
+    margin-bottom: 35px;
+  }
+  .page-intro h1 {
+    font-size: 48px;
+  }
+  .page-intro .lead {
+    font-size: 16px;
+  }
+}
+@media (max-width: 380px) {
+  .page-intro h1 {
+    font-size: 41px;
+  }
+}

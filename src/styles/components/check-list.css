@@ -1,0 +1,15 @@
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0;
+}
+.check-list li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.check-list li:before {
+  content: "↗";
+  margin-right: 20px;
+  color: #8d5a2e;
+}

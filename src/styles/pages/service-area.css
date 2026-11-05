@@ -1,0 +1,55 @@
+.area-directory {
+  padding-top: 15px;
+}
+.search-label {
+  display: block;
+  max-width: 500px;
+}
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 35px;
+  margin: 40px 0;
+}
+.city-grid > a {
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  gap: 10px;
+}
+.city-grid > a:hover {
+  color: #8d5a2e;
+}
+.area-directory > p {
+  font-size: 14px;
+  color: #5b6673;
+  max-width: 650px;
+}
+@media (max-width: 1100px) {
+  .city-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  /* Cascade fix: in the original single file the mobile .section padding won by source order. */
+  .area-directory {
+    padding-top: 65px;
+  }
+  .city-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 25px;
+  }
+  .city-grid a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 380px) {
+  .city-grid {
+    gap: 0 15px;
+  }
+  .city-grid a {
+    font-size: 11px;
+  }
+}

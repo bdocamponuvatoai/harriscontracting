@@ -1,0 +1,41 @@
+.credentials-detail {
+  background: #e3e8ee;
+}
+.credentials-detail > p:not(.eyebrow) {
+  margin: 25px 0;
+  font-size: 14px;
+}
+.license-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 35px;
+}
+.license-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #bac3ce;
+  padding: 25px 0;
+}
+.license-grid span {
+  font-size: 12px;
+}
+.license-grid b {
+  font-size: 17px;
+  font-weight: 500;
+}
+.credentials-detail small {
+  display: block;
+  font-size: 10px;
+  color: #536172;
+  margin-top: 20px;
+}
+@media (max-width: 800px) {
+  .license-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+  .license-grid span {
+    font-size: 11px;
+  }
+}

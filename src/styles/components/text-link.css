@@ -1,0 +1,12 @@
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 13px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #9ba1a9;
+  width: fit-content;
+}
+.text-link:hover {
+  border-color: var(--ink);
+}
