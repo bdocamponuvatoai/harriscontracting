@@ -114,3 +114,53 @@ were taken; neither is a design difference:
 | `robots`                                      | `noindex, nofollow`    | `noindex, nofollow` until `SITE_INDEXABLE=true`                   |
 | canonical, `og:*`, `twitter:*`, `theme-color` | none                   | present; URLs from `SITE_URL`                                     |
 | icon                                          | `/favicon.svg`         | `/icon.svg` (same artwork)                                        |
+
+## After cleanup (preview wording removed)
+
+Owner-facing "preview" framing was removed: the footer preview note, the "Preview privacy" label
+and page wording, "This preview does not book…" in the planner (now "This planner…"), and the
+project-page status note. The 18px the footer note added is now footer bottom padding; the 25px
+the project note provided is now `margin-top` on `.split-copy .text-link`.
+
+| Check                                                             | Result                                                                                                                                                                                                         |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Rows above the first edited element vs legacy, 17 URLs × 6 widths | **102 / 102 identical**, the edited element starting at the same y in both (one capture needed a second attempt)                                                                                               |
+| Behaviour parity                                                  | 21 / 25 identical (same 4 intended differences); 7 / 10 state screenshots identical, the 3 planner states differ only in a 110×9 px band where "preview" became "planner"                                      |
+| Navigation (local export)                                         | 18 / 18; 1,090 requests, zero 4xx/5xx, zero console errors                                                                                                                                                     |
+| `npm run check`, `npm run build`                                  | Pass                                                                                                                                                                                                           |
+| `npm audit --omit=dev`                                            | 0 vulnerabilities (dev-only: 8 moderate, one `minimatch` advisory via `eslint-config-next`)                                                                                                                    |
+| Indexing modes                                                    | Default: `noindex, nofollow`, `robots.txt` disallows all. `SITE_URL` + `SITE_INDEXABLE=true`: `index, follow`, sitemap linked, canonicals on that domain. `SITE_INDEXABLE=true` alone: build fails as intended |
+
+Capture determinism: legacy-vs-legacy captures varied in up to 12 / 102 cases on this machine
+(image decode timing, LCD text antialiasing, glyph raster). Both sites are now captured with the
+same Chrome flags (`--disable-checker-imaging`, software raster, no partial raster,
+`--disable-lcd-text`, fixed sRGB), which brought legacy-vs-legacy variance to 2 / 102. A pair is
+retried up to three times; retries are reported above.
+
+## Live deployment
+
+https://harriscontracting.vercel.app (Vercel, production branch `main`, `SITE_INDEXABLE` unset),
+checked 6 November 2026:
+
+- 16 routes return 200; `/nope/` returns 404 with the styled page; `/about` → 308 `/about/`.
+- Headers present: `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`,
+  `Permissions-Policy`, `Strict-Transport-Security`.
+- `robots.txt` disallows everything; `sitemap.xml` lists 15 URLs on `harriscontracting.vercel.app`;
+  canonical URLs use the same domain.
+- Navigation test: 18 / 18; 1,059 requests (444 prefetch/RSC), zero 4xx/5xx, zero console errors.
+- CI: https://github.com/bdocamponuvatoai/harriscontracting/actions/runs/42066855568 (pass).
+
+Lighthouse 13.6.0, mobile preset (Moto G Power emulation, simulated throttling: 150 ms RTT,
+~1.6 Mbit/s, 4× CPU), Chrome 156, three runs per page against the live URL:
+
+| Page      | Performance | Accessibility | Best practices | SEO | LCP       | TBT       | CLS     | Weight    |
+| --------- | ----------- | ------------- | -------------- | --- | --------- | --------- | ------- | --------- |
+| `/`       | 77–84       | 96            | 100            | 69  | 4.2–6.0 s | 35–80 ms  | 0–0.001 | 1,383 KiB |
+| `/start/` | 96–100      | 96            | 100            | 69  | 0.9–1.0 s | 23–212 ms | 0       | 267 KiB   |
+
+- SEO: the only failing audit is `is-crawlable` (the intended `noindex`).
+- Accessibility: the only failing audit is `color-contrast`: `.service-number` `#757c85` on
+  `#fbf9f5` (4.01:1) on the home page and inactive planner step labels `#6f7884` (4.25:1).
+- Performance (home): images are served at full size (no `srcset` with `images.unoptimized`); the
+  hero is 435 KiB with an estimated 349 KiB saving, and Lighthouse estimates up to 941 KiB across
+  all images.

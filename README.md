@@ -144,7 +144,13 @@ affects the linter only, nothing in the exported site, and npm's suggested fix i
    `X-Frame-Options`, `Permissions-Policy`, `Strict-Transport-Security`). No Content Security
    Policy is set: Next.js inlines bootstrap scripts, and a CSP has not been tested against them.
 
-Preview URL: _not deployed yet_.
+### Deployment
+
+- **Preview URL:** https://harriscontracting.vercel.app (Vercel project `harriscontracting`, team
+  `nuvatoai`; production branch `main`). It is noindexed: `SITE_INDEXABLE` is not set, so
+  `robots.txt` disallows everything and canonical URLs use the `vercel.app` domain.
+- Team deployment URLs (`*-nuvatoai.vercel.app`) sit behind Vercel Deployment Protection.
+- Live checks and Lighthouse results are in `docs/verification.md`.
 
 ## Verification
 
