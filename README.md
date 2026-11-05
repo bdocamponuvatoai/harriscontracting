@@ -17,16 +17,16 @@ npm run preview   # serve out/ locally (npx serve@14)
 
 ## Scripts
 
-| Script | What it does |
-| --- | --- |
-| `dev` | Next.js dev server |
-| `build` | Production build and static export to `out/` |
-| `postbuild` | Runs automatically after `build`: `scripts/fix-export-segments.mjs` (see below) |
-| `preview` | Serves `out/` with `npx serve@14` (not a dependency) |
-| `lint` | ESLint (`eslint-config-next` core-web-vitals + TypeScript) |
-| `typecheck` | `next typegen` then `tsc --noEmit` |
-| `format` / `format:check` | Prettier write / check |
-| `check` | `typecheck` + `lint` + `format:check` (what CI runs before building) |
+| Script                    | What it does                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| `dev`                     | Next.js dev server                                                              |
+| `build`                   | Production build and static export to `out/`                                    |
+| `postbuild`               | Runs automatically after `build`: `scripts/fix-export-segments.mjs` (see below) |
+| `preview`                 | Serves `out/` with `npx serve@14` (not a dependency)                            |
+| `lint`                    | ESLint (`eslint-config-next` core-web-vitals + TypeScript)                      |
+| `typecheck`               | `next typegen` then `tsc --noEmit`                                              |
+| `format` / `format:check` | Prettier write / check                                                          |
+| `check`                   | `typecheck` + `lint` + `format:check` (what CI runs before building)            |
 
 `scripts/fix-export-segments.mjs` works around a Next.js static-export bug on Windows: prefetch
 segment files are written into nested folders (`__next.about/__PAGE__.txt`) instead of flat files
@@ -83,29 +83,29 @@ docs/             verification.md, content-sources.md, color-palette.md
 
 ## Routes
 
-| Route | Page |
-| --- | --- |
-| `/` | Home |
-| `/services/` | Services directory |
-| `/services/{home-additions,second-story-additions,adu-construction,new-home-construction}/` | Service pages |
-| `/projects/` | Portfolio with status filter |
-| `/projects/{hollywood-addition,fort-lauderdale-second-story,wilson-living}/` | Project pages |
-| `/approach/` | Process, finish packages, FAQ |
-| `/about/` | Founder and licences |
-| `/service-area/` | 20-city search |
-| `/start/` | Project planner (`?service=<slug>`, `?city=<name>` presets) |
-| `/privacy/` | How the site handles information |
-| `/robots.txt`, `/sitemap.xml` | Generated from `SITE_URL` / `SITE_INDEXABLE` and the content files |
-| anything else | Styled 404 (`out/404.html`) |
+| Route                                                                                       | Page                                                               |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `/`                                                                                         | Home                                                               |
+| `/services/`                                                                                | Services directory                                                 |
+| `/services/{home-additions,second-story-additions,adu-construction,new-home-construction}/` | Service pages                                                      |
+| `/projects/`                                                                                | Portfolio with status filter                                       |
+| `/projects/{hollywood-addition,fort-lauderdale-second-story,wilson-living}/`                | Project pages                                                      |
+| `/approach/`                                                                                | Process, finish packages, FAQ                                      |
+| `/about/`                                                                                   | Founder and licences                                               |
+| `/service-area/`                                                                            | 20-city search                                                     |
+| `/start/`                                                                                   | Project planner (`?service=<slug>`, `?city=<name>` presets)        |
+| `/privacy/`                                                                                 | How the site handles information                                   |
+| `/robots.txt`, `/sitemap.xml`                                                               | Generated from `SITE_URL` / `SITE_INDEXABLE` and the content files |
+| anything else                                                                               | Styled 404 (`out/404.html`)                                        |
 
 ## Configuration
 
 Copy `.env.example` to `.env.local` for local overrides. Values are read at build time.
 
-| Variable | Default | Effect |
-| --- | --- | --- |
-| `SITE_URL` | `https://$VERCEL_PROJECT_PRODUCTION_URL` on Vercel, else `http://localhost:3000` | Origin for canonical URLs, Open Graph, sitemap and robots. Trailing slash stripped. |
-| `SITE_INDEXABLE` | unset (not indexable) | `true` removes `noindex` and lets `robots.txt` allow crawling. The build fails if this is `true` while the URL is still localhost. |
+| Variable         | Default                                                                          | Effect                                                                                                                             |
+| ---------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `SITE_URL`       | `https://$VERCEL_PROJECT_PRODUCTION_URL` on Vercel, else `http://localhost:3000` | Origin for canonical URLs, Open Graph, sitemap and robots. Trailing slash stripped.                                                |
+| `SITE_INDEXABLE` | unset (not indexable)                                                            | `true` removes `noindex` and lets `robots.txt` allow crawling. The build fails if this is `true` while the URL is still localhost. |
 
 ## Before launch
 

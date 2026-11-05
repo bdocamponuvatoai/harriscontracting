@@ -107,10 +107,10 @@ were taken; neither is a design difference:
 
 ### Head tags (old → new)
 
-| Tag                                           | Legacy                 | New                                                     |
-| --------------------------------------------- | ---------------------- | ------------------------------------------------------- |
+| Tag                                           | Legacy                 | New                                                               |
+| --------------------------------------------- | ---------------------- | ----------------------------------------------------------------- |
 | `<title>`                                     | Per-page titles        | Unchanged, except the 404: `Page not found \| Harris Contracting` |
-| `description`                                 | One shared description | Home keeps it; other pages use their own lead copy      |
-| `robots`                                      | `noindex, nofollow`    | `noindex, nofollow` until `SITE_INDEXABLE=true`         |
-| canonical, `og:*`, `twitter:*`, `theme-color` | none                   | present; URLs from `SITE_URL`                           |
-| icon                                          | `/favicon.svg`         | `/icon.svg` (same artwork)                              |
+| `description`                                 | One shared description | Home keeps it; other pages use their own lead copy                |
+| `robots`                                      | `noindex, nofollow`    | `noindex, nofollow` until `SITE_INDEXABLE=true`                   |
+| canonical, `og:*`, `twitter:*`, `theme-color` | none                   | present; URLs from `SITE_URL`                                     |
+| icon                                          | `/favicon.svg`         | `/icon.svg` (same artwork)                                        |
